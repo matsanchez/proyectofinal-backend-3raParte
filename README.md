@@ -1,11 +1,15 @@
 # Tercer Entrega Proyecto Final
 
+Crear el archivo .env con los datos correspondientes
+
 ```
 
-Aclaracion: Se trabaja con variables de entorno, se sube el archivo .env solo a modo de ejercicio, el mismo nunca se deberia de subir a un repo por contener este mismo informacion sensible y confidencial.
+# MONGODB ATLAS
+MONGO_URI=
 
-En este caso, solo contiene informacion para dicho ejercicio, son datos de uso local(generalizados en todos)
-
+#NODEMAILER CONFIG
+NODEMAILER_FROM=
+NODEMAILER_PASS_APP=
 ```
 
 ```
