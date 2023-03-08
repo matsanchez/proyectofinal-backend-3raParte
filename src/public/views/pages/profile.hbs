@@ -1,0 +1,20 @@
+{{>navbar}}
+<div class="card mb-3 container" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src=/uploads/{{profile.file}} class="img-fluid rounded-5 m-1" alt="Avatar" width="150px" height="150px">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">Mis datos personales</h5>
+        <p class="card-text m-1"><strong>Nombre:</strong> {{profile.name}}</p>
+        <p class="card-text m-1"><strong>Edad:</strong> {{profile.age}}</p>
+        <p class="card-text m-1"><strong>Telefono:</strong> {{profile.phone}}</p>
+        <p class="card-text m-1"><strong>Email:</strong> {{profile.email}}</p>
+        <p class="card-text m-1"><strong>Direccion:</strong> {{profile.address}}</p>
+      </div>
+    </div>
+      <p class="card-text mb-1"><small class="text-muted">Usuario creado: {{profile.create}}</small></p>
+  </div>
+</div>
+{{>scripts}}
