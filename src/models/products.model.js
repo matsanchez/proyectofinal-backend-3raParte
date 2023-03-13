@@ -6,4 +6,4 @@ const schema = new Schema({
   thumbnail: { type: String, require: true },
 });
 
-export const productosSchema = new model("productos", schema);
+export const productsSchema = new model("productos", schema);

@@ -1,6 +1,6 @@
-import { addProduct, setMessage } from "./socket.js";
+import { /* addProduct, */ setMessage } from "./socket.js";
 
-const DOMlistProducts = document.getElementById("listProducts");
+/* const DOMlistProducts = document.getElementById("listProducts"); */
 const DOMroomChat = document.getElementById("roomChat");
 const DOMchat = document.getElementById("formChat");
 DOMchat.addEventListener("submit", (e) => chatHandleSubmit(e, e.target));
@@ -14,18 +14,20 @@ export const chatHandleSubmit = (e, form) => {
   document.getElementById("textarea").value = "";
 };
 
-const productUI = (product) => {
+/* const productUI = (product) => {
   const div = document.createElement("div");
   div.classList.add("w-25");
   div.innerHTML = `
+                <form action="/api/cart/${product._id}" method="POST">
                   <div class="card m-1">
                     <img src=${product.thumbnail} alt=${product.name}>
                     <div class="card-body">
                       <h5 class="card-title">${product.name}</h5>
                       <p class="card-text">$${product.price}</p>
                     </div>
-                    <button class="addCart m-1 mb-2 btn btn-sm btn-success" data-id=${product._id}>Agregar al carrito</button>
-                  </div>
+                    <button type="submit" class="addCart m-1 mb-2 btn btn-sm btn-success" data-id=${product._id}>Agregar al carrito</button>
+                    </div>
+                </form>
                 `;
   const btnAddCart = div.querySelector(".addCart");
   btnAddCart.addEventListener("click", (e) => addProduct(e.target.dataset.id));
@@ -54,7 +56,7 @@ export const appendProduct = (product) => {
     document.querySelector(".empty").remove();
   }
   DOMlistProducts.append(productUI(product));
-};
+}; */
 
 const messageUI = (message) => {
   const li = document.createElement("li");

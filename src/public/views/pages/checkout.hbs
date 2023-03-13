@@ -1,0 +1,34 @@
+{{>navbar}}
+{{#if order}}
+<h2 class="text-center text-success">Orden Confirmada</h2>
+<h4 class="text-center text-light">Su numero de orden es: {{order._id}}</h4>
+<h3 class="text-center text-warning bg-secondary p-3">En breve recibiras un mensaje de texto con la confirmacion del pedido</h3>
+  <table class="table text-light container">
+   <thead>
+    <tr>
+      <th scope="col">Producto</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Precio</th>
+    </tr>
+  </thead>
+  <tbody>
+      {{#each order.products}}
+      <tr>
+          <td><img src={{this.thumbnail}} width="100px" alt=${product.name}></td>
+          <td><h5>{{this.name}}</h5></td>
+          <td><p>${{this.price}}</p></td>
+      </tr>
+      {{/each}}
+      <tr class="text-center">
+        <td><h4>TOTAl: ${{order.total}}</h4></td>
+      </tr>
+    </tbody>
+</table>
+{{else}}
+<div class="container text-center bg-secondary rounded w-50 mt-4">
+  <i class="bi bi-cart-x mt-4" style="font-size: 4rem; color: rgb(224, 104, 104);"></i>
+<h1 class="text-center p-4 text-light font-monospace">No tienes pedidos en curso</h1>
+</div>
+{{/if}}
+<script src="https://cdn.jsdelivr.net/npm/normalizr@3.6.1/dist/normalizr.browser.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>

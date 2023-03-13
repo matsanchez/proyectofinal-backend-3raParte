@@ -1,13 +1,13 @@
 const socket = io();
 
 /* Mensajes Sockets cliente/servidor de Productos */
-export const loadProducts = (callback) => {
+/* export const loadProducts = (callback) => {
   socket.on("server:loadProducts", callback);
-};
+}; */
 
-export const addProduct = (id) => {
+/* export const addProduct = (id) => {
   socket.emit("client:addProduct", id);
-};
+}; */
 
 /* Mensajes Sockets cliente/servidor de Chat de Mensajes */
 export const loadMessages = (callback) => {

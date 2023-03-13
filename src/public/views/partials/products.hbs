@@ -1,1 +1,16 @@
-<div class="container d-flex flex-wrap" id="listProducts"></div>
+<div class="container d-flex flex-wrap">
+    {{#each products}}
+    <div class="w-25">
+    <form action=/api/cart/{{../idCart}}/products/{{this._id}} method="POST">
+        <div class="card m-1">
+          <img src={{this.thumbnail}} alt=${product.name}>
+          <div class="card-body">
+            <h5 class="card-title">{{this.name}}</h5>
+            <p class="card-text">${{this.price}}</p>
+        </div>
+          <button type="submit" class="addCart m-1 mb-2 btn btn-sm btn-success" data-id={{this._id}}>Agregar al carrito</button>
+        </div>
+    </form>
+    </div>
+    {{/each}}
+</div>

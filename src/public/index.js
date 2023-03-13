@@ -1,6 +1,6 @@
-import { loadProducts, addMessage, loadMessages } from "./socket.js";
-import { renderProducts, appendMessage, renderMessages } from "./ui.js";
+import { /* loadProducts */ addMessage, loadMessages } from "./socket.js";
+import { /* renderProducts */ appendMessage, renderMessages } from "./ui.js";
 
-loadProducts(renderProducts);
+/* loadProducts(renderProducts); */
 addMessage(appendMessage);
 loadMessages(renderMessages);

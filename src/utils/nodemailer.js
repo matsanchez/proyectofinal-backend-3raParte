@@ -1,4 +1,5 @@
 import { createTransport } from "nodemailer";
+import loggerApp from "../utils/logger.utils.js";
 import dotenv from "dotenv";
 dotenv.config();
 /* import { logger } from "../middleware/loggers.middleware.js"; */
@@ -29,10 +30,24 @@ export const loadEmail = async (data) => {
             </ul>
     </div>`,
   };
+  try {
+    await transporter.sendMail(mailOptions);
+  } catch (error) {
+    loggerApp.error(error);
+  }
+};
+
+export const orderEmail = async (data, html) => {
+  const mailOptions = {
+    from: data.username,
+    to: process.env.NODEMAILER_FROM,
+    subject: `Un nuevo pedido de ${data.name} ${data.username}`,
+    html: JSON.stringify(html),
+  };
 
   try {
     await transporter.sendMail(mailOptions);
   } catch (error) {
-    console.log(error);
+    loggerApp.error(error);
   }
 };
